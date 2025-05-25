@@ -1,0 +1,161 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background: #f2f2f2;
+}
+
+header {
+  background-color: #4CAF50;
+  color: white;
+  padding: 1rem;
+  text-align: center;
+  position: relative;
+
+  .header-buttons {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    display: flex;
+    gap: 0.5rem;
+
+    button {
+      background: white;
+      color: #4CAF50;
+      border: none;
+      padding: 0.4rem 0.8rem;
+      border-radius: 4px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: #e0e0e0;
+      }
+    }
+  }
+
+  // Responsive за бутоните в header на малки екрани
+  @media (max-width: 600px) {
+    .header-buttons {
+      position: static;
+      justify-content: center;
+      margin-top: 0.5rem;
+    }
+  }
+}
+
+main {
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+
+  .search-filter {
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+
+    input {
+      flex: 1 1 70%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    .cityFilter {
+      flex: 1 1 auto;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+
+    // Responsive за филтрите
+    @media (max-width: 600px) {
+      flex-direction: column;
+
+      #searchInput,
+      #cityFilter {
+        flex: 1 1 100%;
+      }
+    }
+  }
+
+  .restaurant-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+
+    .restaurant {
+      background: white;
+      padding: 1rem;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      flex-wrap: wrap;
+
+      .restaurant-details {
+        flex: 1 1 60%;
+
+        h3 {
+          margin-top: 0;
+          margin-bottom: 0.5rem;
+        }
+
+        .restaurant-info {
+          margin: 0.5rem 0;
+          font-size: 0.9rem;
+          color: #555;
+        }
+      }
+
+      img {
+        max-width: 250px;
+        width: 100%;
+        height: auto;
+        border-radius: 4px;
+        flex: 1 1 35%;
+        object-fit: cover;
+      }
+
+      button {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 0.5rem 1rem;
+        border-radius: 4px;
+        cursor: pointer;
+        margin-top: 0.5rem;
+        transition: background-color 0.3s ease;
+
+        &:hover:not([disabled]) {
+          background-color: #f2c65e;
+        }
+
+        &:disabled {
+          background-color: #ccc;
+          cursor: not-allowed;
+        }
+      }
+
+      // Responsive за ресторанта
+      @media (max-width: 600px) {
+        flex-direction: column;
+        align-items: flex-start;
+
+        img {
+          flex: 1 1 100%;
+          max-width: 100%;
+        }
+
+        .restaurant-details {
+          flex: 1 1 100%;
+        }
+      }
+    }
+  }
+}

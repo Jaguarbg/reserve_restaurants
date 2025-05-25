@@ -1,0 +1,96 @@
+.reservations-list{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-radius: 8px;
+  padding: 0;
+
+  h2 {
+    font-size: 2.5rem;
+    text-align: center;
+    color: #333;
+  }
+
+  .reservation-list {
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 6px 10px rgba(0, 0, 0, 0.1);
+    font-family: 'Segoe UI', sans-serif;
+
+    ul {
+      list-style: none;
+      padding: 0;
+      display: grid; // ← това е ключът
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 3rem; // разстояние между колоните и редовете
+      width: 100%;
+
+      li {
+        padding: 0.5rem;
+        border: 1px solid #e0e0e0;
+        border-radius: 16px;
+        background-color: #61f40b;
+        color: #444;
+        display: flex;
+        flex-direction: column;
+        justify-items: start;
+        gap: 0.3rem;
+        box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+
+        span {
+          margin-left: 0.5rem;
+          font-size: 20px;
+        }
+      }
+    }
+  }
+}
+
+
+
+.all {
+  .reservation-form {
+    max-width: 800px;
+    margin: 2rem auto;
+    background: #fff;
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+    }
+
+    h2 {
+      grid-column: 1 / -1;
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    label {
+      display: block;
+      font-weight: bold;
+      font-size: 1.5rem;
+      padding-left: 0.5rem;
+    }
+
+    input {
+      display: block;
+      width: 100%;
+      margin-top: 1rem;
+    }
+
+    button {
+      margin-top: 1rem;
+    }
+
+  }
+}
