@@ -9,7 +9,6 @@ const controller = new ReservationController();
 router.get('/', requireAuth, async (req, res) => {
     const controller = new ReservationController();
     const user = (req as any).user;
-    console.log("Потребител:", user);
 
     try {
         let reservations;
@@ -18,8 +17,6 @@ router.get('/', requireAuth, async (req, res) => {
         } else {
             reservations = await controller.getReservationsByUserId(user.userId);
         }
-
-        console.log("Намерени резервации:", reservations); // 🟢 ЛОГ
 
         res.json(reservations);
     } catch (err) {
